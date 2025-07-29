@@ -128,41 +128,33 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    const mobileMenuButton = document.createElement('button');
-    mobileMenuButton.className = 'mobile-menu-button';
-    mobileMenuButton.innerHTML = '☰ メニュー';
-    mobileMenuButton.style.cssText = `
-        display: none;
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: #7CCEF4;
-        color: white;
-        border: none;
-        padding: 12px 20px;
-        border-radius: 25px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        z-index: 1000;
-        cursor: pointer;
-        font-size: 16px;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-    `;
+    // ハンバーガーメニューの機能
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const categoryNav = document.getElementById('category-nav');
 
-    if (window.innerWidth <= 768) {
-        mobileMenuButton.style.display = 'block';
-        document.body.appendChild(mobileMenuButton);
-    }
-
-    mobileMenuButton.addEventListener('click', function() {
-        const nav = document.querySelector('.category-nav');
-        nav.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    hamburgerMenu.addEventListener('click', function() {
+        this.classList.toggle('active');
+        categoryNav.classList.toggle('show');
     });
 
-    window.addEventListener('resize', function() {
-        if (window.innerWidth <= 768) {
-            mobileMenuButton.style.display = 'block';
-        } else {
-            mobileMenuButton.style.display = 'none';
+    // カテゴリーリンククリック時にメニューを閉じる
+    categoryLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+                hamburgerMenu.classList.remove('active');
+                categoryNav.classList.remove('show');
+            }
+        });
+    });
+
+    // 画面外クリックでメニューを閉じる
+    document.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768 && 
+            !hamburgerMenu.contains(e.target) && 
+            !categoryNav.contains(e.target) &&
+            categoryNav.classList.contains('show')) {
+            hamburgerMenu.classList.remove('active');
+            categoryNav.classList.remove('show');
         }
     });
 });

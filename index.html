@@ -14,7 +14,7 @@
         </div>
     </header>
 
-    <nav class="category-nav">
+    <nav class="category-nav" id="category-nav">
         <div class="container">
             <ul class="category-list">
                 <li><a href="#nurse-treatments" class="category-link active">看護師施術</a></li>
@@ -27,11 +27,17 @@
         </div>
     </nav>
 
+    <button class="hamburger-menu" id="hamburger-menu" aria-label="メニューを開く">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
     <main class="main-content">
         <div class="container">
 
             <section id="nurse-treatments" class="price-section">
-                <h2 class="section-title">看護師施術 価格表</h2>
+                <h2 class="section-title">看護師施術</h2>
                 <div class="price-table-wrapper">
                     <table class="price-table">
                         <thead>
@@ -255,23 +261,25 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="info-box">
+                <div class="info-box star-note">
+                    <p><strong>★印のメニューは以下のオプションをつけることができます。</strong><br>
+                    ＋¥3,300　イオン導入<br>
+                    ＋¥6,600　ブルーレーザー</p>
+                </div>
+                <div class="info-box warning">
+                    <h3>⚠️ 看護師施術の注意点 ⚠️</h3>
                     <p>・初回価格は、同じカテゴリの施術には適応されません。（インモードを除く）</p>
                     <p>・セットメニューはどちらかの施術をしたことがある場合初回価格適応外となります。</p>
                     <p>・初回価格は各種クーポンと併用可能。</p>
                     <p>・以下のクーポンは併用不可となります。<br>
                     　LINEクーポン、2200円OFFクーポン、リピート割クーポン<br>
                     　キレイパス等外部チケット</p>
-                    <br>
-                    <p><strong>★印のメニューは以下のオプションをつけることができます。</strong><br>
-                    ＋¥3,300　イオン導入<br>
-                    ＋¥6,600　ブルーレーザー</p>
                 </div>
             </section>
 
             <section id="doctor-treatments" class="price-section">
                 <h2 class="section-title">医師施術</h2>
-                <p class="doctor-note">医師施術は初回割引はありません</p>
+                <p class="doctor-note">医師施術に初回割引はありません</p>
                 <div class="price-table-wrapper">
                     <table class="price-table">
                         <thead>
@@ -315,12 +323,12 @@
                             <tr>
                                 <td>ほくろ取り（1つにつき）5ミリまで</td>
                                 <td>¥6,600</td>
-                                <td></td>
+                                <td>要診察予約</td>
                             </tr>
                             <tr>
                                 <td>ほくろ取り（1つにつき）5ミリ以上</td>
                                 <td>¥8,800</td>
-                                <td></td>
+                                <td>要診察予約</td>
                             </tr>
                             <tr>
                                 <td>Vビーム 1shot（2shot目から＋¥1,100）</td>
@@ -378,11 +386,6 @@
                                 <td></td>
                             </tr>
                             <tr>
-                                <td>ボトックス各種</td>
-                                <td>別紙参照</td>
-                                <td></td>
-                            </tr>
-                            <tr>
                                 <td>脂漏性角化症 全顔（CO2フラクショナルレーザー）</td>
                                 <td>¥33,000</td>
                                 <td></td>
@@ -400,10 +403,11 @@
                         </tbody>
                     </table>
                 </div>
+            </section>
 
-                <div class="subsection">
-                    <h3 class="subsection-title">学生割引</h3>
-                    <p class="info-note">学生証を診察時医師に提示してください。</p>
+            <section id="student-discount" class="price-section">
+                <h2 class="section-title">学生割引</h2>
+                    <p class="doctor-note">診察時に学生証を提示してください</p>
                     <div class="price-table-wrapper">
                         <table class="price-table">
                             <thead>
@@ -415,32 +419,31 @@
                             <tbody>
                                 <tr>
                                     <td>ケミカルピーリング（サリチル酸マクロゴール）</td>
-                                    <td class="price-discount">¥3,300</td>
+                                    <td>¥3,300</td>
                                 </tr>
                                 <tr>
                                     <td>ハイドラジェントル</td>
-                                    <td class="price-discount">¥6,600</td>
+                                    <td>¥6,600</td>
                                 </tr>
                                 <tr>
                                     <td>IPL（そばかす、にきび）</td>
-                                    <td class="price-discount">¥6,600</td>
+                                    <td>¥6,600</td>
                                 </tr>
                                 <tr>
                                     <td>ブルーレーザー</td>
-                                    <td class="price-discount">¥3,300</td>
+                                    <td>¥3,300</td>
                                 </tr>
                                 <tr>
                                     <td>ピーリング＋ブルーレーザー</td>
-                                    <td class="price-discount">¥6,600</td>
+                                    <td>¥6,600</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                </div>
             </section>
 
             <section id="botox" class="price-section">
-                <h2 class="section-title">ボトックス💉</h2>
+                <h2 class="section-title">ボトックス</h2>
                 
                 <div class="subsection">
                     <h3 class="subsection-title">顔のボトックス</h3>
@@ -584,7 +587,8 @@
             </section>
 
             <section id="hair-removal" class="price-section">
-                <h2 class="section-title">医療脱毛料金表</h2>
+                <h2 class="section-title">医療脱毛</h2>
+                <p class="doctor-note">剃毛はご自身でお願いします</p>
                 
                 <div class="subsection">
                     <h3 class="subsection-title">全身脱毛（女性）</h3>
@@ -626,12 +630,6 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="info-box">
-                        <p><strong>全身脱毛バリューコース：</strong>腕、足、体幹（顔、うなじ、VIO除く）</p>
-                        <p><strong>全身脱毛：</strong>顔、うなじ、VIOを含む全身</p>
-                        <p class="warning-text">コース変更は初回価格適応になりません（例：全身脱毛→腕、足など）</p>
-                        <p>部分脱毛を追加する場合は初回半額は適応されます</p>
-                    </div>
                 </div>
 
                 <div class="subsection">
@@ -668,10 +666,6 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="info-box warning">
-                        <p>男性の全身脱毛VIO、顔、うなじはサービスとして提供しておりません。</p>
-                        <p>コース変更は初回価格適応になりません（例：全身脱毛→腕、足など）</p>
-                    </div>
                 </div>
 
                 <div class="subsection">
@@ -682,24 +676,20 @@
                                 <tr>
                                     <th>部位</th>
                                     <th>通常価格</th>
-                                    <th>費用目安（5回）</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>両わき・ひじ下・ひざ下</td>
                                     <td>¥11,000</td>
-                                    <td>¥55,000</td>
                                 </tr>
                                 <tr>
                                     <td>腕、足、脇</td>
                                     <td>¥16,500</td>
-                                    <td>¥82,500</td>
                                 </tr>
                                 <tr>
                                     <td>全身脱毛バリューコース</td>
                                     <td>¥27,500</td>
-                                    <td>¥137,500</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -714,36 +704,29 @@
                                 <tr>
                                     <th>部位</th>
                                     <th>通常価格</th>
-                                    <th>費用目安（5回）</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>両わき・ひじ下・ひざ下</td>
                                     <td>¥12,000</td>
-                                    <td>¥60,000</td>
                                 </tr>
                                 <tr>
                                     <td>腕、足、脇</td>
                                     <td>¥18,000</td>
-                                    <td>¥90,000</td>
                                 </tr>
                                 <tr>
                                     <td>全身脱毛バリューコース</td>
                                     <td>¥33,000</td>
-                                    <td>¥165,000</td>
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
-                    <div class="info-box">
-                        <p><strong>全身脱毛バリューコース：</strong>腕、足、体幹（顔、うなじ、VIO除く）</p>
-                        <p>学割にはVIO込みの料金はありません。</p>
                     </div>
                 </div>
 
                 <div class="subsection">
                     <h3 class="subsection-title">部分脱毛</h3>
+                    <img src="脱毛パーツ表.jpg" alt="脱毛パーツ表" style="max-width: 100%; height: auto; margin: 20px 0;">
                     <div class="price-table-wrapper">
                         <table class="price-table">
                             <thead>
@@ -787,21 +770,25 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="parts-list">
-                        <p><strong>SSパーツ：</strong>ワキ、手の甲と指、足背と足趾、耳</p>
-                        <p><strong>Sパーツ：</strong>うなじ、首、おでこ、ほほ、ひざ</p>
-                        <p><strong>Mパーツ：</strong>顔（女性）、ひげ（麻酔込み）、ひじ上、ひじ下、Vライン、Iライン、Oライン</p>
-                        <p><strong>Lパーツ：</strong>胸部、腹部、ひざ上、ひざ下、顔（男性、半顔、麻酔込み）</p>
-                        <p><strong>LLパーツ：</strong>腕全部（脇含まない）、脚全部、背中、VIO</p>
-                    </div>
-                    <div class="additional-fees">
+                    <div class="info-box star-note">
+                        <h4>オプションメニュー</h4>
                         <p>剃毛：1部位 ¥2,200</p>
                         <p>麻酔：1部位 ¥1,100</p>
                     </div>
-                    <div class="info-box">
-                        <p>★全身脱毛、部分脱毛ともに11回目から初回価格</p>
-                        <p>★全身脱毛から部分脱毛への回数カウントは引き継がれます</p>
-                    </div>
+                </div>
+
+                <div class="info-box warning">
+                    <h3>⚠️ 脱毛メニューの注意点 ⚠️</h3>
+                    <p>・<strong>全身脱毛バリューコース：</strong>腕、足、体幹（顔、うなじ、VIO除く）</p>
+                    <p>・<strong>全身脱毛：</strong>顔、うなじ、VIOを含む全身</p>
+                    <p>・全身脱毛、部分脱毛ともに11回目から初回価格となります</p>
+                    <p>・全身脱毛から部分脱毛への回数カウントは引き継がれます</p>
+                    <p>・コース変更は初回価格適応になりません（例：全身脱毛→腕、足など）</p>
+                    <p>・男性のVIOはサービスとして提供しておりません</p>
+                    <p>・うなじ、VIOの剃毛やデザインは行っておりません</p>
+                    <p>・剃り残しがある場合火傷や毛嚢炎のリスク、十分な脱毛効果が得られない可能性があります</p>
+                    <p>・剃り残しがある場合は照射を避けるか1部位につき剃毛料金2200円を頂戴します</p>
+                    <p>・生理中のVIO脱毛は火傷のリスクがあるため別日に変更をお願いします</p>
                 </div>
             </section>
 
@@ -831,7 +818,7 @@
                         <table class="policy-table">
                             <tr>
                                 <td>10分以内の遅刻</td>
-                                <td>施術可能（時間短縮の場合あり）</td>
+                                <td>施術可能<br>（時間短縮の場合あり）</td>
                             </tr>
                             <tr>
                                 <td>10分以上の遅刻</td>
